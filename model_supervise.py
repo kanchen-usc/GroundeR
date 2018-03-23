@@ -15,7 +15,7 @@ from util.custom_init import msr_init
 from util import loss as loss_func
 
 class ground_model(object):
-	def __init__(self, is_train, config=None):
+	def __init__(self, config=None):
 		self.batch_size = self._init_param(config, 'batch_size', 40)
 		self.test_batch_size = self._init_param(config, 'test_batch_size', -1)
 		self.class_num = self._init_param(config, 'class_num', 100)

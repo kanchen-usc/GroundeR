@@ -128,7 +128,8 @@ def run_evaluate():
 		sess.run(init)
 		saver = tf.train.Saver(max_to_keep=100)
 
-		feed_dict = update_feed_dict(cur_dataset, model, True)
+		feed_dict = update_feed_dict(cur_dataset, model, False)
+		print 'Restore model_%d'%restore_id
 		saver.restore(sess, './model/%s/model_%d.ckpt'%(config.save_path, restore_id)) 
 				
 		print "-----------------------------------------------"
