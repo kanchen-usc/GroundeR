@@ -27,7 +27,7 @@ $ python evaluate_supervise.py -m [Model Name] -g [GPU ID] --restore_id [Restore
 Make sure the model name entered for evaluation is the same as the model name in training, and the epoch id exists.
 
 ### Unsupervised Model
-The implementation of unsupervised model of GroundeR is a little different from the [paper](https://arxiv.org/pdf/1511.03745.pdf): In Equation 5, original GroundeR adopts a ```softmax``` function to calculate attention weights, while we adopt a ```relu``` function to generate these weights. We observe a performance drop by using ```softmax``` function.<br/>
+The implementation of unsupervised model of GroundeR is a little different from the [paper](https://arxiv.org/pdf/1511.03745.pdf): In Equation 5, original GroundeR adopts a ```softmax``` function to calculate attention weights, while we adopt a ```relu``` function to generate these weights. We observe a performance drop by using ```softmax``` function. To try original GroundeR model, please uncomment line 96 and comment line 97 in ```model_unsupervise.py```.<br/>
 For training, please enter the root folder of ```GroundeR```, then type
 ```
 $ python train_unsupervise.py -m [Model Name] -g [GPU ID]
